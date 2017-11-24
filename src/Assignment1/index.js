@@ -1,17 +1,20 @@
 import React, {Component} from 'react'
 
 import './style.css'
-
+import CategoryFilter from './CategoryFilter'
 
 export default class Assignment1 extends Component { 
     render(){
         return (
-            <div className="main ui text container">
-                <h1 className="ui dividing centered header">Assignment1 Title</h1>
-                <div id="content">
-                    Under Construction ...
+            <section class="section">
+                <h1 className="title">Assignment One</h1>
+                <CategoryFilter />
+                <div className="tile is-vertical " style={{"height":"200px"}}>
+                    <div className="tile is-6 ">Sections</div>
+                    <div className="tile ">Fav</div>
                 </div>
-            </div>
+                
+            </section>
         )
     }
 }
