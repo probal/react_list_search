@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 
 import categoryData from './data/categoryData'
-
+import SectionList from './SectionList'
 
 export default class CategoryFilter extends Component {
+
     state = {
         categories: [],
-        filterByCategoryId : -1,
+        categoryId : -1
     }
-
 
     componentDidMount = () => {
         this.setState({
@@ -16,27 +16,31 @@ export default class CategoryFilter extends Component {
         })
     }
 
-    handleCategoryChange() {
+    filterByCategoryId() {
 
     }
 
     render() {
-        const {id, name, imageUrl} = this.state.categories
 
         return (
-            <nav className="panel ">
-                <p class="panel-tabs">
-                    <a href="#">None</a>
+            <div>
+                <div className="columns">
+                    <a>
+                        <p>ALL</p>
+                    </a>
                     {this.state.categories.map((category) =>
-                        <a className="button is-large">
+                        <a href="#" className="column border-me">
                             <figure class="image is-128x128 ">
                                 <img src={category.imageUrl}/>
                             </figure>
                             <div>{category.name}</div>
                         </a>
                     )}
-                </p>
-            </nav>
+                </div>
+                <SectionList
+                    categoryId={this.state.categoryId}
+                />
+            </div>
         )
     }
 }
