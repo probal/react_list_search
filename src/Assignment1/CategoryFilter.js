@@ -16,8 +16,10 @@ export default class CategoryFilter extends Component {
         })
     }
 
-    filterByCategoryId() {
-
+    filterByCategoryId = (e) => {
+        this.setState({
+            categoryId: e.target.id,
+        })
     }
 
     render() {
@@ -29,8 +31,8 @@ export default class CategoryFilter extends Component {
                         <p>ALL</p>
                     </a>
                     {this.state.categories.map((category) =>
-                        <a href="#" className="column border-me">
-                            <figure class="image is-128x128 ">
+                        <a className="column border-me" onClick={this.filterByCategoryId.bind(this)}>
+                            <figure className="image is-128x128 ">
                                 <img src={category.imageUrl}/>
                             </figure>
                             <div>{category.name}</div>

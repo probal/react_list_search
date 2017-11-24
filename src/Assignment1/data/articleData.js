@@ -44,7 +44,7 @@ const data = [
     {
         id: 5,
         title: 'Explore Little Havanas Culture, Food & Traditions',
-        sectionId: 4,
+        sectionId: 1,
         categoryId: 3,
         tag: 'tag4',
         isFav: false,
@@ -54,7 +54,7 @@ const data = [
     {
         id: 6,
         title: 'Cycle Beautiful Venetian Causeway to Miami Beach',
-        sectionId: 4,
+        sectionId: 1,
         categoryId: 3,
         tag: 'tag3',
         isFav: false,

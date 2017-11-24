@@ -12,11 +12,25 @@ export default class Article extends Component {
 
     render() {
 
-        const {id, title} = this.props.article
+        const {id, title, sectionId, categoryId, tag, isFav, price, imageUrl} = this.props.article
         
         return (
-            <div className="tile">
-                <p>{id}---{title}</p>
+            <div>
+                <div className="card">
+                    <div className="card-image">
+                        <figure className="image is-128x128">
+                            <img src={imageUrl} alt="Placeholder image"/>
+                        </figure>
+                    </div>
+                    <div className="card-content">
+                        <div className="content">
+                            <a>{tag}</a>
+                            <p>{title}</p>
+                            <p>{isFav}</p>
+                            <p>${price} Per Person</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }

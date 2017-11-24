@@ -7,7 +7,7 @@ import Section from './Section'
 export default class SectionList extends Component {
     
     static propTypes = {
-        categoryId: PropTypes.object.isRequired
+        categoryId: PropTypes.string.isRequired
     }
 
     state = {
