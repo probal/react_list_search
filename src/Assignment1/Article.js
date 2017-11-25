@@ -8,7 +8,9 @@ export default class Article extends Component {
         article: PropTypes.object.isRequired
     }
 
-    
+    searchByTag = (event) => {
+        console.log(event.target.value)
+    }
 
     render() {
 
@@ -19,7 +21,7 @@ export default class Article extends Component {
                 <img className="card-img-top img-thumbnail" src={imageUrl} alt="Placeholder image"/>
                 <div className="card-block">
                     <h4 className="card-title">{title}</h4>
-                    <span className="badge badge-default">{tag}</span>
+                    <span className="badge badge-default" value={tag} onClick={this.searchByTag.bind(this)}>{tag}</span>
                     <p>{isFav}</p>
                     <p>${price} Per Person</p>
                 </div>

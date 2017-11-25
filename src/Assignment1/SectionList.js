@@ -32,16 +32,18 @@ export default class SectionList extends Component {
                 <div className="col-9">
                     <div className="row">
                         {this.state.sections.map((section) =>
-                                <Section
-                                    key={section.id}
-                                    section={section}
-                                    categoryId={this.state.categoryId}
-                                    />
+                            <Section
+                                key={section.id}
+                                section={section}
+                                categoryId={this.state.categoryId}
+                                />
                         )}
                     </div>
                 </div>
-                <div className="col-3 card">
-                    Fav
+                <div className="card">
+                    <h3 className="card-header">My Fav Section</h3>
+                    <div class="card-block">
+                    </div>
                 </div>
                     
             </div>

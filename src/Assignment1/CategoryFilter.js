@@ -16,13 +16,11 @@ export default class CategoryFilter extends Component {
         })
     }
 
-    handleFilter = (e, category) => {
-        e.preventDefault();
-        console.log(category.id)
+    handleFilter = (event) => {
+        console.log(event.target.value)
         this.setState({
-            filterBycategoryId: e.target.value
+            filterBycategoryId: 1
         })
-        console.log(e.target.value)
     }
 
     render() {
@@ -37,7 +35,7 @@ export default class CategoryFilter extends Component {
                     </div>
                         {this.state.categories.map((category) =>
                             <div className="col">
-                                <a className="col" value={category.id} onClick={this.handleFilter.bind(this, category)}>
+                                <a className="col" href="#" value={category.id} onClick={this.handleFilter.bind(this)}>
                                     <figure className="image is-128x128 ">
                                         <img src={category.imageUrl}/>
                                     </figure>

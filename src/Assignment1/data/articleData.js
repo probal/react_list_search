@@ -19,7 +19,17 @@ const data = [
         tag: 'tag2',
         isFav: false,
         price: getRandomPrice(),
-        imageUrl: 'https://a0.muscache.com/im/pictures/9a41f1ac-c629-4c4f-a5b6-0a3c2a84a62e.jpg?aki_policy=large',
+        imageUrl: 'https://a0.muscache.com/im/pictures/9a41f1ac-c629-4c4f-a5b6-0a3c2a84a62e.jpg?aki_policy=medium',
+    },
+    {
+        id: 7,
+        title: 'Catch your own dinner and explore underwater wrecks',
+        sectionId: 2,
+        categoryId: 1,
+        tag: 'tag2',
+        isFav: false,
+        price: getRandomPrice(),
+        imageUrl: 'https://a0.muscache.com/im/pictures/764b3f31-4407-4880-a69c-4f17dabcb41d.jpg?aki_policy=medium',
     },
     {
         id: 3,
@@ -29,7 +39,7 @@ const data = [
         tag: 'tag3',
         isFav: false,
         price: getRandomPrice(),
-        imageUrl: 'https://a0.muscache.com/im/pictures/23a10733-d4b9-4d32-be46-ffcca5974fb7.jpg?aki_policy=large',
+        imageUrl: 'https://a0.muscache.com/im/pictures/23a10733-d4b9-4d32-be46-ffcca5974fb7.jpg?aki_policy=medium',
     },
     {
         id: 4,
@@ -39,7 +49,17 @@ const data = [
         tag: 'tag1',
         isFav: false,
         price: getRandomPrice(),
-        imageUrl: 'https://a0.muscache.com/im/pictures/807c052f-c4b0-468a-a5bd-491b667dadbb.jpg?aki_policy=large',
+        imageUrl: 'https://a0.muscache.com/im/pictures/807c052f-c4b0-468a-a5bd-491b667dadbb.jpg?aki_policy=medium',
+    },
+    {
+        id: 8,
+        title: 'The River Oyster Bar',
+        sectionId: 3,
+        categoryId: 1,
+        tag: 'tag3',
+        isFav: false,
+        price: getRandomPrice(),
+        imageUrl: 'https://a0.muscache.com/ac/pictures/2592f4ae-4287-464c-af26-0044a6a8be37.jpg?interpolation=lanczos-none&size=medium',
     },
     {
         id: 5,
@@ -49,7 +69,7 @@ const data = [
         tag: 'tag4',
         isFav: false,
         price: getRandomPrice(),
-        imageUrl: 'https://a0.muscache.com/im/pictures/dad3cd3f-4324-4941-b3bb-658072f4caec.jpg?aki_policy=large',
+        imageUrl: 'https://a0.muscache.com/im/pictures/dad3cd3f-4324-4941-b3bb-658072f4caec.jpg?aki_policy=medium',
     },
     {
         id: 6,
@@ -59,7 +79,17 @@ const data = [
         tag: 'tag3',
         isFav: false,
         price: getRandomPrice(),
-        imageUrl: 'https://a0.muscache.com/im/pictures/29eeb867-9b9b-4f50-a280-d489d9c61410.jpg?aki_policy=large',
+        imageUrl: 'https://a0.muscache.com/im/pictures/29eeb867-9b9b-4f50-a280-d489d9c61410.jpg?aki_policy=medium',
+    },
+    {
+        id: 9,
+        title: 'Miami art scene, museums, murals & collectors.',
+        sectionId: 1,
+        categoryId: 3,
+        tag: 'tag3',
+        isFav: false,
+        price: getRandomPrice(),
+        imageUrl: 'https://a0.muscache.com/im/pictures/635dd92e-640f-4dad-b700-d1e2085323d4.jpg?aki_policy=medium',
     }
 ]
 

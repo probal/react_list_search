@@ -36,16 +36,14 @@ export default class Section extends Component {
 
         return (
             <div className="card">
-                <p>{name}</p>
-                <div className="">
+                <p className="card-header">{name}</p>
+                <div className="d-flex flex-row">
                     {sectionArticles.map((article) =>
-                        <div className="">
-                            <Article
-                                key={article.id}
-                                article={article}
-                                />
-                        </div>
-                    )}
+                        <Article
+                            key={article.id}
+                            article={article}
+                            />
+                     )}
                 </div>
             </div>
         )
