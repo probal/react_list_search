@@ -8,7 +8,7 @@ export default class Section extends Component {
 
     static propTypes = {
         section: PropTypes.object.isRequired,
-        categoryId: PropTypes.string.isRequired
+        category: PropTypes.object.isRequired
     }
 
     state = {
@@ -24,16 +24,22 @@ export default class Section extends Component {
     render() {
 
         const {id, name} = this.props.section
-        const sectionArticles = this.state.articles.filter( function (article) {
+        let sectionArticles = this.state.articles.filter( function (article) {
             return article.sectionId === id
           });
 
+        if(this.props.category) {
+            sectionArticles = sectionArticles.filter(function(article){
+                return article.categoryId === this.props.category.id
+            });
+        }
+
         return (
-            <div className="tile is-parent">
+            <div className="card">
                 <p>{name}</p>
-                <div className="column is-9 border-me">
+                <div className="">
                     {sectionArticles.map((article) =>
-                        <div className="tile is-ancestor">
+                        <div className="">
                             <Article
                                 key={article.id}
                                 article={article}

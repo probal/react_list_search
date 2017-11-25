@@ -7,7 +7,7 @@ import Section from './Section'
 export default class SectionList extends Component {
     
     static propTypes = {
-        categoryId: PropTypes.string.isRequired
+        categoryId: PropTypes.number.isRequired
     }
 
     state = {
@@ -28,21 +28,22 @@ export default class SectionList extends Component {
     render() {
 
         return (
-            <div>
-                <div className="columns">
-                    <div className="column is-9 border-me">
+            <div className="row">
+                <div className="col-9">
+                    <div className="row">
                         {this.state.sections.map((section) =>
-                            <div className="tile is-ancestor">
                                 <Section
                                     key={section.id}
                                     section={section}
                                     categoryId={this.state.categoryId}
-                                 />
-                            </div>
+                                    />
                         )}
                     </div>
-                    <div className="column is-3 border-me">Fav</div>
                 </div>
+                <div className="col-3 card">
+                    Fav
+                </div>
+                    
             </div>
         )
     }

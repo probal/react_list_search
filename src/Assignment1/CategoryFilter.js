@@ -7,7 +7,7 @@ export default class CategoryFilter extends Component {
 
     state = {
         categories: [],
-        categoryId : -1
+        filterBycategoryId : -1
     }
 
     componentDidMount = () => {
@@ -16,31 +16,38 @@ export default class CategoryFilter extends Component {
         })
     }
 
-    filterByCategoryId = (e) => {
+    handleFilter = (e, category) => {
+        e.preventDefault();
+        console.log(category.id)
         this.setState({
-            categoryId: e.target.id,
+            filterBycategoryId: e.target.value
         })
+        console.log(e.target.value)
     }
 
     render() {
 
         return (
             <div>
-                <div className="columns">
-                    <a>
-                        <p>ALL</p>
-                    </a>
-                    {this.state.categories.map((category) =>
-                        <a className="column border-me" onClick={this.filterByCategoryId.bind(this)}>
-                            <figure className="image is-128x128 ">
-                                <img src={category.imageUrl}/>
-                            </figure>
-                            <div>{category.name}</div>
+                <div className="row">
+                    <div className="col">
+                        <a>
+                            <p>ALL</p>
                         </a>
-                    )}
+                    </div>
+                        {this.state.categories.map((category) =>
+                            <div className="col">
+                                <a className="col" value={category.id} onClick={this.handleFilter.bind(this, category)}>
+                                    <figure className="image is-128x128 ">
+                                        <img src={category.imageUrl}/>
+                                    </figure>
+                                    <div>{category.name}</div>
+                                </a>
+                            </div>
+                        )}
                 </div>
                 <SectionList
-                    categoryId={this.state.categoryId}
+                    categoryId={this.state.filterBycategoryId}
                 />
             </div>
         )
