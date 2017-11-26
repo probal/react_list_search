@@ -8,11 +8,12 @@ export default class Section extends Component {
 
     static propTypes = {
         section: PropTypes.object.isRequired,
-        category: PropTypes.object.isRequired
+        categoryId: PropTypes.number.isRequired
     }
 
     state = {
-        articles: []
+        articles: [],
+        categoryId: this.props.categoryId
     }
 
     componentDidMount = () => {
@@ -24,16 +25,16 @@ export default class Section extends Component {
     render() {
 
         const {id, name} = this.props.section
+
+        // Step 1 Filtering with sectionId, Required
         let sectionArticles = this.state.articles.filter( function (article) {
             return article.sectionId === id
           });
 
-        if(this.props.category) {
-            sectionArticles = sectionArticles.filter(function(article){
-                return article.categoryId === this.props.category.id
-            });
-        }
+        // Step 2 filtering with categoryId, Optoinal
 
+        // Step 3 filtering with tag, Optional
+        
         return (
             <div className="card">
                 <p className="card-header">{name}</p>

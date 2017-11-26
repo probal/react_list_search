@@ -35,14 +35,14 @@ export default class SectionList extends Component {
                             <Section
                                 key={section.id}
                                 section={section}
-                                categoryId={this.state.categoryId}
+                                categoryId={this.props.categoryId}
                                 />
                         )}
                     </div>
                 </div>
                 <div className="card">
                     <h3 className="card-header">My Fav Section</h3>
-                    <div class="card-block">
+                    <div className="card-block">
                     </div>
                 </div>
                     
