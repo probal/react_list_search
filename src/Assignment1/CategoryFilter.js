@@ -34,7 +34,7 @@ export default class CategoryFilter extends Component {
                         </a>
                     </div>
                     {this.state.categories.map((category) =>
-                        <div className="col">
+                        <div className="col" key={category.id}>
                             <a className="col" href="#" value={category.id} onClick={this.handleFilter.bind(this)}>
                                 <figure className="image is-128x128 ">
                                     <img src={category.imageUrl}/>

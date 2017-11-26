@@ -23,7 +23,7 @@ export default class Article extends Component {
                     <h4 className="card-title">{title}</h4>
                     <span className="badge badge-default" value={tag} onClick={this.searchByTag.bind(this)}>{tag}</span>
                     <p>{isFav}</p>
-                    <p>${price} Per Person</p>
+                    <p>${price} per person</p>
                 </div>
             </div>
         )

@@ -36,7 +36,7 @@ export default class Section extends Component {
         // Step 3 filtering with tag, Optional
         
         return (
-            <div className="card">
+            <div className="card mb-5">
                 <p className="card-header">{name}</p>
                 <div className="d-flex flex-row">
                     {sectionArticles.map((article) =>
