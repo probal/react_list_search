@@ -15,17 +15,16 @@ export default class Article extends Component {
     }
 
     searchByTag = (value) => {
-        console.log(value);
         this.props.onTagSelect(value);
     };
 
     render() {
 
-        const {id, title, tag, isFav, price, imageUrl} = this.props.article;
+        const {id, title, categoryId, tag, isFav, price, imageUrl} = this.props.article;
         
         return (
             <div id={'article_' + id} className="card" style={{width:"200px"}}>
-                <img className="card-img-top img-thumbnail" src={imageUrl} alt="Placeholder image"/>
+                <img className="card-img-top img-thumbnail" src={imageUrl} alt={categoryId}/>
                 <div className="card-block">
                     <h4 className="card-title">{title}</h4>
                     <span className="badge badge-default" value={tag} onClick={() => this.searchByTag(tag)}>{tag}</span>

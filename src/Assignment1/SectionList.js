@@ -34,6 +34,13 @@ export default class SectionList extends Component {
                 
                 <div className="col-9">
                     <div className="row">
+                        <div className="input-group col-md-4">
+                            <input className="form-control"
+                                placeholder={this.props.tagId}/>
+                            <div className="input-group-addon" ><i className="fa fa-search"></i></div>
+                        </div>
+                    </div>
+                    <div className="row">
                         {this.state.sections.map((section) =>
                             <Section
                                 key={section.id}

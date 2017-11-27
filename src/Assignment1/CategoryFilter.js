@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export default class CategoryFilter extends Component {
 
-    constructor(props){
+    constructor(props) {
 
         super(props);
         this.state = {
@@ -10,16 +10,16 @@ export default class CategoryFilter extends Component {
         };
 
         this.renderCategories = this.renderCategories.bind(this);
-        this.handleFilter = this.handleFilter.bind(this);
+        this.handleCategoryFilter = this.handleCategoryFilter.bind(this);
     }
 
-    componentWillReceiveProps = (nextProps) =>{
+    componentWillReceiveProps = (nextProps) => {
         this.setState({
             categories: nextProps.categories
         });
     };
 
-    handleFilter = (value) => {
+    handleCategoryFilter = (value) => {
         this.props.onSelect(value);
     };
 
@@ -28,7 +28,7 @@ export default class CategoryFilter extends Component {
         return _categories.map((category) => {
             return(
                 <div className="col" key={category.id}>
-                    <a className="col" value={category.id} onClick={() => this.handleFilter(category.id)}>
+                    <a className="col" value={category.id} onClick={() => this.handleCategoryFilter(category.id)}>
                         <figure className="image is-128x128 ">
                             <img src={category.imageUrl} alt={category.name}/>
                         </figure>
@@ -45,7 +45,7 @@ export default class CategoryFilter extends Component {
                 <div className="row">
                     
                     <div className="col">
-                        <a className="col" onClick={() => this.handleFilter(-1)}>
+                        <a className="col" onClick={() => this.handleCategoryFilter(-1)}>
                             <figure className="image is-128x128 "/>
                             <div>All</div>
                         </a>

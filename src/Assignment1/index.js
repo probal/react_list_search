@@ -7,7 +7,7 @@ import SectionList from './SectionList'
 
 export default class Assignment1 extends Component {
 
-    constructor(props){
+    constructor(props) {
 
         super(props);
         this.state = {
@@ -16,7 +16,7 @@ export default class Assignment1 extends Component {
             filterByTag: null
         };
 
-        this.handleFilter = this.handleFilter.bind(this);
+        this.handleCategoryFilter = this.handleCategoryFilter.bind(this);
         this.handleTagFilter = this.handleTagFilter.bind(this);
     }
 
@@ -26,19 +26,19 @@ export default class Assignment1 extends Component {
         })
     };
 
-    handleFilter = (value) => {
+    handleCategoryFilter = (value) => {
         this.setState({
             filterByCategoryId: value
         });
     };
 
-    handleTagFilter = (value) =>{
+    handleTagFilter = (value) => {
         this.setState({
             filterByTag: value
         });
     };
 
-    render(){
+    render() {
         return (
             <div className="container" style={{"padding":"50px"}}>
 
@@ -50,7 +50,7 @@ export default class Assignment1 extends Component {
 
                 <CategoryFilter 
                     categories={this.state.categories} 
-                    onSelect={this.handleFilter}
+                    onSelect={this.handleCategoryFilter}
                 />
 
                 <SectionList
