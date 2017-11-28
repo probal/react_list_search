@@ -10,10 +10,6 @@ export default class FavouriteList extends Component{
         onSelectFav: PropTypes.func
     };
 
-    constructor(props) {
-        super(props);
-    }
-
     renderFavArticles(articles) {
         if(articles.length > 0) {
             return articles.map((article) => {

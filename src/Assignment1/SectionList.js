@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import sectionData from './data/sectionData'
-import Article from './Article'
 import Section from './Section'
 
 export default class SectionList extends Component {

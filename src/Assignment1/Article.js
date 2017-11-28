@@ -28,14 +28,14 @@ export default class Article extends Component {
 
         const {id, title, categoryId, tag, isFav, price, imageUrl} = this.props.article;
         let favIcon = 'images/favorite/un_fav.png'
-        if (this.props.article.isFav){
+        if (isFav){
             favIcon = 'images/favorite/fav.png'
         }
         
         return (
             <div id={'article_' + id} className="card card-margin" style={{width:"200px"}}>
                 <img className="card-img-top img-thumbnail" src={imageUrl} alt={categoryId}/>
-                <img className="fav-img-top" src={favIcon} 
+                <img className="fav-img-top" src={favIcon}  alt={categoryId} 
                 style={{ position: 'absolute',width: 30, height: 30, top: 10, right: 10 }}
                 onClick={() => this.favoriteTapped(this.props.article)}/>
                 <div className="card-block">

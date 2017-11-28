@@ -19,8 +19,8 @@ export default class CategoryFilter extends Component {
         });
     };
 
-    handleCategoryFilter = (value) => {
-        this.props.onSelect(value);
+    handleCategoryFilter = (value, name) => {
+        this.props.onSelect(value, name);
     };
 
     renderCategories() {
@@ -28,7 +28,7 @@ export default class CategoryFilter extends Component {
         return _categories.map((category) => {
             return(
                 <div className="category-item" key={category.id}>
-                    <a href="#" className="" value={category.id} onClick={() => this.handleCategoryFilter(category.id)}>
+                    <a href="#" className="" value={category.id} onClick={() => this.handleCategoryFilter(category.id, category.name)}>
                     <img className="category-image" src={category.imageUrl} alt={category.name}/>
                         <div>{category.name}</div>
                     </a>
@@ -41,13 +41,6 @@ export default class CategoryFilter extends Component {
         return (
             <div>
                 <div className="category-container d-flex flex-row">
-                    
-                    <div className="category-item">
-                        <a  href="#" className="" onClick={() => this.handleCategoryFilter(-1)}>
-                            <img src ={'images/clear_search.png'} className="img-thumbnail"/>
-                        </a>
-                    </div>
-
                     {this.renderCategories()}
                 </div>
             </div>

@@ -48,8 +48,8 @@ export default StyleSheet.create({
   'fixed-top': {
     'position': 'fixed',
     'top': [{ 'unit': 'px', 'value': 0 }],
-    'right': [{ 'unit': 'px', 'value': 0 }],
-    'left': [{ 'unit': 'px', 'value': 0 }],
+    'right': [{ 'unit': 'px', 'value': 300 }],
+    'left': [{ 'unit': 'px', 'value': 200 }],
     'marginBottom': [{ 'unit': 'px', 'value': 50 }],
     'backgroundColor': '#6a6a77',
     'zIndex': '1030'

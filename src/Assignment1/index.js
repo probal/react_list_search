@@ -7,8 +7,6 @@ import CategoryFilter from './CategoryFilter'
 import SectionList from './SectionList'
 import FavouriteList from './FavoriteList'
 import articleData from './data/articleData'
-import Article from './Article'
-
 
 export default class Assignment1 extends Component {
 
@@ -20,6 +18,7 @@ export default class Assignment1 extends Component {
             categories: [],
             favorites: [],
             filterByCategoryId : -1,
+            filterByCategoryName : null,
             filterByTag: null
         };
 
@@ -37,9 +36,10 @@ export default class Assignment1 extends Component {
         })
     };
 
-    handleCategoryFilter = (value) => {
+    handleCategoryFilter = (value, name) => {
         this.setState({
-            filterByCategoryId: value
+            filterByCategoryId: value,
+            filterByCategoryName: name
         });
     };
 
@@ -56,7 +56,8 @@ export default class Assignment1 extends Component {
             })
         } else if(filterName === 'category') {
             this.setState({
-                filterByCategoryId: -1
+                filterByCategoryId: -1,
+                filterByCategoryName: null
             })
         }
     };
@@ -85,12 +86,23 @@ export default class Assignment1 extends Component {
                         <h1>React List Search Demo</h1>
                     </div>
                 </div>
-
+                
                 <CategoryFilter 
                     categories={this.state.categories} 
                     onSelect={this.handleCategoryFilter}
                 />
-                <FilterRemove filterByTag={this.state.filterByTag} onRemove={this.removeFilter}/>
+                <FilterRemove 
+                filterByTag={this.state.filterByTag} 
+                filterByCategory={this.state.filterByCategoryId}
+                filterByCategoryName={this.state.filterByCategoryName}
+                filterBy="category"
+                onRemove={this.removeFilter}/>
+                <FilterRemove 
+                filterByTag={this.state.filterByTag} 
+                filterByCategory={this.state.filterByCategoryId}
+                filterByCategoryName={this.state.filterByCategoryName}
+                filterBy="tag"
+                onRemove={this.removeFilter}/>
                 <div className = "row">
 
                     <SectionList
