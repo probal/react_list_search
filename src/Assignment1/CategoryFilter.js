@@ -44,8 +44,7 @@ export default class CategoryFilter extends Component {
                     
                     <div className="category-item">
                         <a className="" onClick={() => this.handleCategoryFilter(-1)}>
-                            <figure className="image is-128x128 "/>
-                            <div>All</div>
+                            <img src ={'images/clear_search.png'} className="img-thumbnail"/>
                         </a>
                     </div>
 
