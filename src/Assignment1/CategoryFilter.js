@@ -41,18 +41,17 @@ export default class CategoryFilter extends Component {
 
     render() {
         return (
-            <div>
-                <div className="row">
-                    
-                    <div className="col">
-                        <a className="col" onClick={() => this.handleCategoryFilter(-1)}>
-                            <figure className="image is-128x128 "/>
-                            <div>All</div>
-                        </a>
-                    </div>
-
-                    {this.renderCategories()}
+            <div className="d-flex flex-row">
+                
+                <div className="col">
+                    <a className="col" onClick={() => this.handleCategoryFilter(-1)}>
+                        <div class="text-center">
+                            <img className="img-thumbnail" src={'images/clear-search.ico'} alt={'CLEAR'}/>
+                        </div>
+                    </a>
                 </div>
+
+                {this.renderCategories()}
             </div>
         )
     }

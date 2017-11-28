@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 
 import './style.css'
 import categoryData from './data/categoryData'
-import CategoryFilter from './CategoryFilter'
+import CategoryList from './CategoryFilter'
 import SectionList from './SectionList'
 
 export default class Assignment1 extends Component {
@@ -48,7 +48,7 @@ export default class Assignment1 extends Component {
                     </div>
                 </div>
 
-                <CategoryFilter 
+                <CategoryList 
                     categories={this.state.categories} 
                     onSelect={this.handleCategoryFilter}
                 />
