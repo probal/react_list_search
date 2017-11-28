@@ -54,8 +54,9 @@ export default class Section extends Component {
             });
         
         return (
+            <div className="">
             <div className="card mb-5">
-                <p className="card-header">{name}</p>
+                <h3 className="card-header">{name}</h3>
                 <div className="d-flex flex-wrap">
                     {sectionArticles.map((article) =>
                         <Article
@@ -66,6 +67,7 @@ export default class Section extends Component {
                         />
                      )}
                 </div>
+            </div>
             </div>
         )
     }

@@ -1,11 +1,13 @@
 import React, {Component} from 'react'
 
 import './style.css'
+
 import FilterRemove from './FilterRemove'
-import categoryData from './data/categoryData'
 import CategoryFilter from './CategoryFilter'
 import SectionList from './SectionList'
 import FavouriteList from './FavoriteList'
+
+import categoryData from './data/categoryData'
 import articleData from './data/articleData'
 
 export default class Assignment1 extends Component {
@@ -36,9 +38,9 @@ export default class Assignment1 extends Component {
         })
     };
 
-    handleCategoryFilter = (value, name) => {
+    handleCategoryFilter = (id, name) => {
         this.setState({
-            filterByCategoryId: value,
+            filterByCategoryId: id,
             filterByCategoryName: name
         });
     };
@@ -79,43 +81,40 @@ export default class Assignment1 extends Component {
 
     render() {
         return (
-            <div className="container" style={{"padding":"0px"}}>
+            <div className="container1" style={{"padding":"0px"}}>
 
-                <div className="d-flex flex-row fixed-top">
-                    <div className="centered">
-                        <h1>React List Search Demo</h1>
-                    </div>
-                </div>
-                
+                <FilterRemove 
+                    filterByTag={this.state.filterByTag} 
+                    filterByCategory={this.state.filterByCategoryId}
+                    filterByCategoryName={this.state.filterByCategoryName}
+                    filterBy="category"
+                    onRemove={this.removeFilter}/>
                 <CategoryFilter 
                     categories={this.state.categories} 
                     onSelect={this.handleCategoryFilter}
                 />
-                <FilterRemove 
-                filterByTag={this.state.filterByTag} 
-                filterByCategory={this.state.filterByCategoryId}
-                filterByCategoryName={this.state.filterByCategoryName}
-                filterBy="category"
-                onRemove={this.removeFilter}/>
-                <FilterRemove 
-                filterByTag={this.state.filterByTag} 
-                filterByCategory={this.state.filterByCategoryId}
-                filterByCategoryName={this.state.filterByCategoryName}
-                filterBy="tag"
-                onRemove={this.removeFilter}/>
-                <div className = "row">
+                
 
-                    <SectionList
-                        articles={this.state.articles}
-                        categoryId={this.state.filterByCategoryId}
-                        tagId={this.state.filterByTag}
-                        onTagSelect={this.handleTagFilter}
-                        onSelectFav={this.handleFavouriteAction}
-                    />
-                    <FavouriteList favoriteArticles={this.state.favorites}
-                                    onTagSelect={this.handleTagFilter}
-                                    onSelectFav={this.handleFavouriteAction}/>
-                </div>
+                <FavouriteList favoriteArticles={this.state.favorites}
+                    onTagSelect={this.handleTagFilter}
+                    onSelectFav={this.handleFavouriteAction}/>
+                
+
+                <FilterRemove 
+                    filterByTag={this.state.filterByTag} 
+                    filterByCategory={this.state.filterByCategoryId}
+                    filterByCategoryName={this.state.filterByCategoryName}
+                    filterBy="tag"
+                    onRemove={this.removeFilter}/>
+                <SectionList
+                    articles={this.state.articles}
+                    categoryId={this.state.filterByCategoryId}
+                    tagId={this.state.filterByTag}
+                    onTagSelect={this.handleTagFilter}
+                    onSelectFav={this.handleFavouriteAction}
+                />
+               
+
             </div>
         )
     }

@@ -36,18 +36,18 @@ export default class SectionList extends Component {
     render() {
 
         return (
-            <div className="col-9">
-                    {this.state.sections.map((section) =>
-                        <Section
-                            articles={this.props.articles}
-                            key={section.id}
-                            section={section}
-                            categoryId={this.props.categoryId}
-                            tagId={this.props.tagId}
-                            onTagSelect={this.props.onTagSelect}
-                            onSelectFav = {this.props.onSelectFav}
-                        />
-                    )}
+            <div className="">
+                {this.state.sections.map((section) =>
+                    <Section
+                        articles={this.props.articles}
+                        key={section.id}
+                        section={section}
+                        categoryId={this.props.categoryId}
+                        tagId={this.props.tagId}
+                        onTagSelect={this.props.onTagSelect}
+                        onSelectFav = {this.props.onSelectFav}
+                    />
+                )}
             </div>
         )
     }

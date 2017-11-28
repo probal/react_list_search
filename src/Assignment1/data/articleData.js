@@ -149,7 +149,7 @@ const data = [
         tag: 'tag4',
         isFav: false,
         price: getRandomPrice(),
-        imageUrl: 'https://a0.muscache.com/im/pictures/65de000c-e23c-4fb8-9790-6fcfc2d27bad.jpg?aki_policy=medium',
+        imageUrl: 'https://a0.muscache.com/im/pictures/1e64a306-2e7b-4787-9bd6-d2cd456e8f60.jpg?aki_policy=medium',
     },
     {
         id: 17,

@@ -32,10 +32,10 @@ export default class FavouriteList extends Component{
 
         if(favorites.length > 0) {
             return(
-                <div className="col-3">
-                    <div className="card">
-                        <h3 className="card-header">My Fav Section</h3>
-                        <div className="card-block">
+                <div className="d-flex wrap">
+                    <div className="card mb-5">
+                        <h3 className="card-header">My Favourites</h3>
+                        <div className="flex-row flex-wrap">
                             {this.renderFavArticles(favorites)}
                         </div>
                     </div>
@@ -43,12 +43,7 @@ export default class FavouriteList extends Component{
             );
         } else {
             return(
-                <div className="col-3">
-                    <div className="card">
-                        <h3 className="card-header">My Fav Section</h3>
-                        <p className="card-block">No fav yet</p>
-                    </div>
-                </div>
+                <div className="flex-row"/>                    
             );
         }
         

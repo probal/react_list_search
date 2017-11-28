@@ -29,7 +29,7 @@ export default class CategoryFilter extends Component {
             return(
                 <div className="category-item" key={category.id}>
                     <a href="#" className="" value={category.id} onClick={() => this.handleCategoryFilter(category.id, category.name)}>
-                    <img className="category-image" src={category.imageUrl} alt={category.name}/>
+                        <img className="category-image" src={category.imageUrl} alt={category.name}/>
                         <div>{category.name}</div>
                     </a>
                  </div>
