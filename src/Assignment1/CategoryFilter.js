@@ -28,7 +28,7 @@ export default class CategoryFilter extends Component {
         return _categories.map((category) => {
             return(
                 <div className="category-item" key={category.id}>
-                    <a className="" value={category.id} onClick={() => this.handleCategoryFilter(category.id)}>
+                    <a href="#" className="" value={category.id} onClick={() => this.handleCategoryFilter(category.id)}>
                     <img className="category-image" src={category.imageUrl} alt={category.name}/>
                         <div>{category.name}</div>
                     </a>
@@ -43,7 +43,7 @@ export default class CategoryFilter extends Component {
                 <div className="category-container d-flex flex-row">
                     
                     <div className="category-item">
-                        <a className="" onClick={() => this.handleCategoryFilter(-1)}>
+                        <a  href="#" className="" onClick={() => this.handleCategoryFilter(-1)}>
                             <img src ={'images/clear_search.png'} className="img-thumbnail"/>
                         </a>
                     </div>

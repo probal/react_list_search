@@ -37,14 +37,14 @@ export default class Article extends Component {
         }
         
         return (
-            <div id={'article_' + id} className="card" style={{width:"200px"}}>
+            <div id={'article_' + id} className="card card-margin" style={{width:"200px"}}>
                 <img className="card-img-top img-thumbnail" src={imageUrl} alt={categoryId}/>
                 <img className="fav-img-top" src={favIcon} 
-                style={{ position: 'absolute',width: 40, height: 40, top: 10, right: 10 }}
+                style={{ position: 'absolute',width: 30, height: 30, top: 10, right: 10 }}
                 onClick={() => this.favoriteTapped(this.props.article)}/>
                 <div className="card-block">
                     <h4 className="card-title">{title}</h4>
-                    <span className="badge badge-default" value={tag} onClick={() => this.searchByTag(tag)}>{tag}</span>
+                    <a href = "#" className="badge badge-default" value={tag} onClick={() => this.searchByTag(tag)}>{tag}</a>
                     {/* <p>{isFav}</p> */}
                     <p>${price} per person</p>
                 </div>

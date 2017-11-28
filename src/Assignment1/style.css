@@ -63,3 +63,8 @@
     background-color: #6a6a77;
     z-index: 1030;
 }
+
+.card-margin{
+    margin: 5px 10px 5px 10px;
+
+}

@@ -53,5 +53,8 @@ export default StyleSheet.create({
     'marginBottom': [{ 'unit': 'px', 'value': 50 }],
     'backgroundColor': '#6a6a77',
     'zIndex': '1030'
+  },
+  'card-margin': {
+    'margin': [{ 'unit': 'px', 'value': 5 }, { 'unit': 'px', 'value': 10 }, { 'unit': 'px', 'value': 5 }, { 'unit': 'px', 'value': 10 }]
   }
 });
