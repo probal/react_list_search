@@ -70,7 +70,7 @@ export default class SectionList extends Component {
                 <div className="col-3">
                     <div className="card mb-5">
                         <p className="card-header">My Favorites</p>
-                        <div className="d-flex flex-row">
+                        <div className="d-flex flex-wrap">
                             {this.state.favorites.map((article) =>
                                 <Article
                                     key={article.id}
