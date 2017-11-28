@@ -54,13 +54,7 @@ export default class SectionList extends Component {
             <div className="row">
                 
                 <div className="col-9">
-                    <div className="row">
-                        <div className="input-group col-md-4">
-                            <input className="form-control"
-                                placeholder={this.props.tagId}/>
-                            <div className="input-group-addon" ><i className="fa fa-search"></i></div>
-                        </div>
-                    </div>
+                    
                     <div className="row">
                         {this.state.sections.map((section) =>
                             <Section
@@ -74,21 +68,21 @@ export default class SectionList extends Component {
                         )}
                     </div>
                 </div>
-
-                <div className="card mb-5">
-                    <p className="card-header">My Favorites</p>
-                    <div className="d-flex flex-row">
-                        {this.state.favorites.map((article) =>
-                            <Article
-                                key={article.id}
-                                article={article}
-                                onTagSelect={this.props.onTagSelect}
-                                onFavSelect = {this.handleFavorite}
-                            />
-                         )}
+                <div className="col-3">
+                    <div className="card mb-5">
+                        <p className="card-header">My Favorites</p>
+                        <div className="d-flex flex-row">
+                            {this.state.favorites.map((article) =>
+                                <Article
+                                    key={article.id}
+                                    article={article}
+                                    onTagSelect={this.props.onTagSelect}
+                                    onFavSelect = {this.handleFavorite}
+                                />
+                            )}
+                        </div>
                     </div>
                 </div>
-                    
             </div>
         )
     }

@@ -140,7 +140,7 @@ const data = [
         isFav: false,
         price: getRandomPrice(),
         imageUrl: 'https://a0.muscache.com/im/pictures/1e64a306-2e7b-4787-9bd6-d2cd456e8f60.jpg?aki_policy=medium',
-    },/*
+    },
     {
         id: 16,
         title: 'Lovely Apartment With A Back Yard Garden.',
@@ -170,7 +170,7 @@ const data = [
         isFav: false,
         price: getRandomPrice(),
         imageUrl: 'https://a0.muscache.com/im/pictures/b5f7be9a-f102-4c48-8ed0-a443330ccb68.jpg?aki_policy=medium',
-    }*/,
+    },
     {
         id: 19,
         title: 'The calm house of colours & music.',

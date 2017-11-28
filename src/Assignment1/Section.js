@@ -57,7 +57,7 @@ export default class Section extends Component {
         return (
             <div className="card mb-5">
                 <p className="card-header">{name}</p>
-                <div className="d-flex flex-row">
+                <div className="d-flex flex-wrap space-around">
                     {sectionArticles.map((article) =>
                         <Article
                             key={article.id}
