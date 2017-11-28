@@ -5,7 +5,7 @@ import Article from './Article';
 
 export default class FavouriteList extends Component{
     static propTypes = {
-        articles: PropTypes.array.isRequired,
+        favoriteArticles: PropTypes.array.isRequired,
         onTagSelect: PropTypes.func,
         onSelectFav: PropTypes.func
     };
@@ -32,18 +32,15 @@ export default class FavouriteList extends Component{
     render() {
 
         // Step 1 Filtering with Favourite Articles, Required
-        let favArticles = this.props.articles
-            .filter( function (article) {
-                return article.isFav;
-            });
+        let favorites = this.props.favoriteArticles
 
-        if(favArticles.length > 0) {
+        if(favorites.length > 0) {
             return(
                 <div className="col-3">
                     <div className="card">
                         <h3 className="card-header">My Fav Section</h3>
                         <div className="card-block">
-                            {this.renderFavArticles(favArticles)}
+                            {this.renderFavArticles(favorites)}
                         </div>
                     </div>
                 </div>

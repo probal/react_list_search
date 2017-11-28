@@ -7,6 +7,7 @@ import CategoryFilter from './CategoryFilter'
 import SectionList from './SectionList'
 import FavouriteList from './FavoriteList'
 import articleData from './data/articleData'
+import Article from './Article'
 
 
 export default class Assignment1 extends Component {
@@ -17,6 +18,7 @@ export default class Assignment1 extends Component {
         this.state = {
             articles: [],
             categories: [],
+            favorites: [],
             filterByCategoryId : -1,
             filterByTag: null
         };
@@ -30,7 +32,8 @@ export default class Assignment1 extends Component {
     componentDidMount = () => {
         this.setState({
             categories: categoryData,
-            articles: articleData
+            articles: articleData,
+            favorites:[]
         })
     };
 
@@ -58,18 +61,19 @@ export default class Assignment1 extends Component {
         }
     };
 
-    handleFavouriteAction = (articleID) => {
-        let newArticles = this.state.articles.map((article) => {
-            if(article.id === articleID){
-                article.isFav = !article.isFav;
-            }
-
-            return article;
-        });
-
+    handleFavouriteAction = (article) => {
+        article.isFav = !article.isFav
+        let tempFavorites = this.state.favorites
+        if (tempFavorites.includes(article)) {
+            const index = tempFavorites.indexOf(article)
+            tempFavorites.splice(index, 1)
+        } else {
+            tempFavorites.push(article)
+        }
+        
         this.setState({
-            articles: newArticles
-        });
+            favorites: tempFavorites
+        })
     };
 
     render() {
@@ -90,12 +94,13 @@ export default class Assignment1 extends Component {
                 <div className = "row">
 
                     <SectionList
+                        articles={this.state.articles}
                         categoryId={this.state.filterByCategoryId}
                         tagId={this.state.filterByTag}
                         onTagSelect={this.handleTagFilter}
                         onSelectFav={this.handleFavouriteAction}
                     />
-                    <FavouriteList articles={this.state.articles}
+                    <FavouriteList favoriteArticles={this.state.favorites}
                                     onTagSelect={this.handleTagFilter}
                                     onSelectFav={this.handleFavouriteAction}/>
                 </div>

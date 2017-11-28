@@ -1,26 +1,23 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import articleData from './data/articleData'
 import Article from './Article'
 
 export default class Section extends Component {
 
     static propTypes = {
+        articles: PropTypes.array.isRequired,
         section: PropTypes.object.isRequired,
         categoryId: PropTypes.number.isRequired,
         tagId: PropTypes.string,
-        favoriteArticle: PropTypes.array,
         onTagSelect: PropTypes.func,
-        // onFavSelect: PropTypes.func
         onSelectFav: PropTypes.func
     };
 
     constructor(props){
         super(props);
         this.state = {
-            articles: articleData,
-            favoriteArticle: this.props.favoriteArticle,
+            articles: this.props.articles,
             categoryId: this.props.categoryId,
             tagId: this.props.tagId
         };
@@ -28,6 +25,7 @@ export default class Section extends Component {
 
     componentWillReceiveProps = (nextProps) => {
         this.setState({
+            articles: nextProps.articles,
             categoryId: nextProps.categoryId,
             tagId: nextProps.tagId
         });
@@ -64,7 +62,6 @@ export default class Section extends Component {
                             key={article.id}
                             article={article}
                             onTagSelect={this.props.onTagSelect}
-                            // onFavSelect = {this.props.onFavSelect}
                             onSelectFav = {this.props.onSelectFav}
                         />
                      )}
