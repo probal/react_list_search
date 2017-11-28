@@ -10,13 +10,16 @@ export default class Section extends Component {
         section: PropTypes.object.isRequired,
         categoryId: PropTypes.number.isRequired,
         tagId: PropTypes.string,
-        onTagSelect: PropTypes.func
+        favoriteArticle: PropTypes.array,
+        onTagSelect: PropTypes.func,
+        onFavSelect: PropTypes.func
     };
 
     constructor(props){
         super(props);
         this.state = {
             articles: articleData,
+            favoriteArticle: this.props.favoriteArticle,
             categoryId: this.props.categoryId,
             tagId: this.props.tagId
         };
@@ -60,6 +63,7 @@ export default class Section extends Component {
                             key={article.id}
                             article={article}
                             onTagSelect={this.props.onTagSelect}
+                            onFavSelect = {this.props.onFavSelect}
                         />
                      )}
                 </div>
