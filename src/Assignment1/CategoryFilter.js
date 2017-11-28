@@ -27,11 +27,9 @@ export default class CategoryFilter extends Component {
         let _categories = this.state.categories;
         return _categories.map((category) => {
             return(
-                <div className="col" key={category.id}>
-                    <a className="col" value={category.id} onClick={() => this.handleCategoryFilter(category.id)}>
-                        <figure className="image is-128x128 ">
-                            <img src={category.imageUrl} alt={category.name}/>
-                        </figure>
+                <div className="category-item" key={category.id}>
+                    <a className="" value={category.id} onClick={() => this.handleCategoryFilter(category.id)}>
+                    <img className="category-image" src={category.imageUrl} alt={category.name}/>
                         <div>{category.name}</div>
                     </a>
                  </div>
@@ -42,10 +40,10 @@ export default class CategoryFilter extends Component {
     render() {
         return (
             <div>
-                <div className="row">
+                <div className="category-container d-flex flex-row">
                     
-                    <div className="col">
-                        <a className="col" onClick={() => this.handleCategoryFilter(-1)}>
+                    <div className="category-item">
+                        <a className="" onClick={() => this.handleCategoryFilter(-1)}>
                             <figure className="image is-128x128 "/>
                             <div>All</div>
                         </a>
