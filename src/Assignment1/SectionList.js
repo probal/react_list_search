@@ -7,15 +7,19 @@ import Section from './Section'
 export default class SectionList extends Component {
     
     static propTypes = {
+        articles: PropTypes.array.isRequired,
         categoryId: PropTypes.number.isRequired,
         tagId: PropTypes.string,
-        onTagSelect: PropTypes.func
+        onTagSelect: PropTypes.func,
+        onSelectFav: PropTypes.func
     };
 
     constructor(props){
         super(props);
         this.state = {
+            articles: [],
             sections: [],
+            favorites: [],
             categoryId: this.props.categoryId
         };
     }
@@ -23,42 +27,27 @@ export default class SectionList extends Component {
 
     componentDidMount = () => {
         this.setState({
-            sections: sectionData
+            articles: this.props.articles,
+            sections: sectionData,
+            favorites: []
         })
     };
 
     render() {
 
         return (
-            <div className="row">
-                
-                <div className="col-9">
-                    <div className="row">
-                        <div className="input-group col-md-4">
-                            <input type="text" className="form-control"
-                                value={this.props.tagId}/>
-                            <div className="input-group-addon" ><i className="fa fa-search"></i></div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        {this.state.sections.map((section) =>
-                            <Section
-                                key={section.id}
-                                section={section}
-                                categoryId={this.props.categoryId}
-                                tagId={this.props.tagId}
-                                onTagSelect={this.props.onTagSelect}
-                            />
-                        )}
-                    </div>
-                </div>
-
-                <div className="card">
-                    <h3 className="card-header">My Fav Section</h3>
-                    <div className="card-block">
-                    </div>
-                </div>
-                    
+            <div className="">
+                {this.state.sections.map((section) =>
+                    <Section
+                        articles={this.props.articles}
+                        key={section.id}
+                        section={section}
+                        categoryId={this.props.categoryId}
+                        tagId={this.props.tagId}
+                        onTagSelect={this.props.onTagSelect}
+                        onSelectFav = {this.props.onSelectFav}
+                    />
+                )}
             </div>
         )
     }

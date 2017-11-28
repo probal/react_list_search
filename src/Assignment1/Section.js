@@ -1,22 +1,23 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import articleData from './data/articleData'
 import Article from './Article'
 
 export default class Section extends Component {
 
     static propTypes = {
+        articles: PropTypes.array.isRequired,
         section: PropTypes.object.isRequired,
         categoryId: PropTypes.number.isRequired,
         tagId: PropTypes.string,
-        onTagSelect: PropTypes.func
+        onTagSelect: PropTypes.func,
+        onSelectFav: PropTypes.func
     };
 
     constructor(props){
         super(props);
         this.state = {
-            articles: articleData,
+            articles: this.props.articles,
             categoryId: this.props.categoryId,
             tagId: this.props.tagId
         };
@@ -24,6 +25,7 @@ export default class Section extends Component {
 
     componentWillReceiveProps = (nextProps) => {
         this.setState({
+            articles: nextProps.articles,
             categoryId: nextProps.categoryId,
             tagId: nextProps.tagId
         });
@@ -52,17 +54,20 @@ export default class Section extends Component {
             });
         
         return (
+            <div className="">
             <div className="card mb-5">
-                <p className="card-header">{name}</p>
-                <div className="d-flex flex-row">
+                <h3 className="card-header">{name}</h3>
+                <div className="d-flex flex-wrap">
                     {sectionArticles.map((article) =>
                         <Article
                             key={article.id}
                             article={article}
                             onTagSelect={this.props.onTagSelect}
+                            onSelectFav = {this.props.onSelectFav}
                         />
                      )}
                 </div>
+            </div>
             </div>
         )
     }

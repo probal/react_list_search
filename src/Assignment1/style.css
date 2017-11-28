@@ -1,5 +1,68 @@
 /* Styles go here */
 
-.border-me {
-    border: 0px solid;
+.container1 {
+    margin-top: 80px;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.filter-container {
+    margin: 50px;
+}
+
+.grow-equally div {
+    flex-grow: 1;
+}
+
+.section-container div:nth-child(1) {
+    flex-grow: 3;
+}
+
+.article-image {
+    width: 230px;
+    height: 160px
+}
+
+.category-image {
+    width: 96px;
+    height: 72px;
+}
+
+.category-container {
+    margin: 20px 0 20px 0px;
+}
+
+.category-item {
+    background-color: transparent !important;
+    border: 1px solid rgba(0,0,0,0.1) !important;
+    border-radius: 3px !important;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.06) !important;
+    flex: 1;
+    margin: 0px 10px;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 300;
+    left: 200;
+    margin-bottom: 50px;
+    background-color: #6a6a77;
+    z-index: 1030;
+}
+
+.card-margin{
+    margin: 5px 15px;
+
 }

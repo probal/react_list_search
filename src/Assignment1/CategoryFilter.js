@@ -19,19 +19,17 @@ export default class CategoryFilter extends Component {
         });
     };
 
-    handleCategoryFilter = (value) => {
-        this.props.onSelect(value);
+    handleCategoryFilter = (value, name) => {
+        this.props.onSelect(value, name);
     };
 
     renderCategories() {
         let _categories = this.state.categories;
         return _categories.map((category) => {
             return(
-                <div className="col" key={category.id}>
-                    <a className="col" value={category.id} onClick={() => this.handleCategoryFilter(category.id)}>
-                        <figure className="image is-128x128 ">
-                            <img src={category.imageUrl} alt={category.name}/>
-                        </figure>
+                <div className="category-item" key={category.id}>
+                    <a href="#" className="" value={category.id} onClick={() => this.handleCategoryFilter(category.id, category.name)}>
+                        <img className="category-image" src={category.imageUrl} alt={category.name}/>
                         <div>{category.name}</div>
                     </a>
                  </div>
@@ -41,14 +39,9 @@ export default class CategoryFilter extends Component {
 
     render() {
         return (
-            <div className="d-flex flex-row">
-                
-                <div className="col">
-                    <a className="col" onClick={() => this.handleCategoryFilter(-1)}>
-                        <div class="text-center">
-                            <img className="img-thumbnail" src={'images/clear-search.ico'} alt={'CLEAR'}/>
-                        </div>
-                    </a>
+            <div>
+                <div className="category-container d-flex flex-row">
+                    {this.renderCategories()}
                 </div>
 
                 {this.renderCategories()}
