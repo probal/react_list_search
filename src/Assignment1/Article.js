@@ -7,7 +7,9 @@ export default class Article extends Component {
     static propTypes = {
         article: PropTypes.object.isRequired,
         onTagSelect: PropTypes.func,
-        onFavSelect: PropTypes.func
+        onSelectFav: PropTypes.func
+        // onFavSelect: PropTypes.func
+        
     };
 
     constructor(props){
@@ -22,7 +24,8 @@ export default class Article extends Component {
 
     favoriteTapped = (value) => {
         console.log("tapped favorite:", value.id);
-        this.props.onFavSelect(value);
+        // this.props.onFavSelect(value);
+        this.props.onSelectFav(value.id);
     };
 
     render() {

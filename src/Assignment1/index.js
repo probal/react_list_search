@@ -5,6 +5,9 @@ import FilterRemove from './FilterRemove'
 import categoryData from './data/categoryData'
 import CategoryFilter from './CategoryFilter'
 import SectionList from './SectionList'
+import FavouriteList from './FavoriteList'
+import articleData from './data/articleData'
+
 
 export default class Assignment1 extends Component {
 
@@ -12,6 +15,7 @@ export default class Assignment1 extends Component {
 
         super(props);
         this.state = {
+            articles: [],
             categories: [],
             filterByCategoryId : -1,
             filterByTag: null
@@ -19,11 +23,14 @@ export default class Assignment1 extends Component {
 
         this.handleCategoryFilter = this.handleCategoryFilter.bind(this);
         this.handleTagFilter = this.handleTagFilter.bind(this);
+        this.handleFavouriteAction = this.handleFavouriteAction.bind(this);
+        this.removeFilter = this.removeFilter.bind(this);
     }
 
     componentDidMount = () => {
         this.setState({
-            categories: categoryData
+            categories: categoryData,
+            articles: articleData
         })
     };
 
@@ -51,6 +58,20 @@ export default class Assignment1 extends Component {
         }
     };
 
+    handleFavouriteAction = (articleID) => {
+        let newArticles = this.state.articles.map((article) => {
+            if(article.id === articleID){
+                article.isFav = !article.isFav;
+            }
+
+            return article;
+        });
+
+        this.setState({
+            articles: newArticles
+        });
+    };
+
     render() {
         return (
             <div className="container" style={{"padding":"50px"}}>
@@ -66,12 +87,18 @@ export default class Assignment1 extends Component {
                     onSelect={this.handleCategoryFilter}
                 />
                 <FilterRemove filterByTag={this.state.filterByTag} onRemove={this.removeFilter}/>
-                <SectionList
-                    categoryId={this.state.filterByCategoryId}
-                    tagId={this.state.filterByTag}
-                    onTagSelect={this.handleTagFilter}
-                />
+                <div className = "row">
 
+                    <SectionList
+                        categoryId={this.state.filterByCategoryId}
+                        tagId={this.state.filterByTag}
+                        onTagSelect={this.handleTagFilter}
+                        onSelectFav={this.handleFavouriteAction}
+                    />
+                    <FavouriteList articles={this.state.articles}
+                                    onTagSelect={this.handleTagFilter}
+                                    onSelectFav={this.handleFavouriteAction}/>
+                </div>
             </div>
         )
     }

@@ -11,7 +11,8 @@ export default class SectionList extends Component {
     static propTypes = {
         categoryId: PropTypes.number.isRequired,
         tagId: PropTypes.string,
-        onTagSelect: PropTypes.func
+        onTagSelect: PropTypes.func,
+        onSelectFav: PropTypes.func
     };
 
     constructor(props){
@@ -32,7 +33,6 @@ export default class SectionList extends Component {
     };
 
     handleFavorite = (article, fav) => {
-        console.log('article tapped', article.id);
         article.isFav = !article.isFav
         let tempFavs = this.state.favorites
         if (tempFavs.includes(article)) {
@@ -50,38 +50,18 @@ export default class SectionList extends Component {
     render() {
 
         return (
-            <div className="row">
-                
-                <div className="col-9">
-                
-                    <div className="row">
-                        {this.state.sections.map((section) =>
-                            <Section
-                                key={section.id}
-                                section={section}
-                                categoryId={this.props.categoryId}
-                                tagId={this.props.tagId}
-                                onTagSelect={this.props.onTagSelect}
-                                onFavSelect={this.handleFavorite}
-                            />
-                        )}
-                    </div>
-                </div>
-                <div className="col-3">
-                    <div className="card mb-5">
-                        <p className="card-header">My Favorites</p>
-                        <div className="d-flex flex-wrap">
-                            {this.state.favorites.map((article) =>
-                                <Article
-                                    key={article.id}
-                                    article={article}
-                                    onTagSelect={this.props.onTagSelect}
-                                    onFavSelect = {this.handleFavorite}
-                                />
-                            )}
-                        </div>
-                    </div>
-                </div>
+            <div className="col-9">
+                    {this.state.sections.map((section) =>
+                        <Section
+                            key={section.id}
+                            section={section}
+                            categoryId={this.props.categoryId}
+                            tagId={this.props.tagId}
+                            onTagSelect={this.props.onTagSelect}
+                            // onFavSelect={this.handleFavorite}
+                            onSelectFav = {this.props.onSelectFav}
+                        />
+                    )}
             </div>
         )
     }

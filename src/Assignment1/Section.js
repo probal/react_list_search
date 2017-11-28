@@ -12,7 +12,8 @@ export default class Section extends Component {
         tagId: PropTypes.string,
         favoriteArticle: PropTypes.array,
         onTagSelect: PropTypes.func,
-        onFavSelect: PropTypes.func
+        // onFavSelect: PropTypes.func
+        onSelectFav: PropTypes.func
     };
 
     constructor(props){
@@ -57,13 +58,14 @@ export default class Section extends Component {
         return (
             <div className="card mb-5">
                 <p className="card-header">{name}</p>
-                <div className="d-flex flex-wrap space-around">
+                <div className="d-flex flex-wrap">
                     {sectionArticles.map((article) =>
                         <Article
                             key={article.id}
                             article={article}
                             onTagSelect={this.props.onTagSelect}
-                            onFavSelect = {this.props.onFavSelect}
+                            // onFavSelect = {this.props.onFavSelect}
+                            onSelectFav = {this.props.onSelectFav}
                         />
                      )}
                 </div>

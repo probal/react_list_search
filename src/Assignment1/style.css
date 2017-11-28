@@ -3,3 +3,63 @@
 .border-me {
     border: 0px solid;
 }
+
+.space-around {
+    justify-content: space-around;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.filter-container {
+    margin: 50px;
+}
+
+.grow-equally div {
+    flex-grow: 1;
+}
+
+.section-container div:nth-child(1) {
+    flex-grow: 3;
+}
+
+.article-image {
+    width: 230px;
+    height: 160px
+}
+
+.category-image {
+    width: 96px;
+    height: 72px;
+}
+
+.category-container {
+    margin: 100px 0 20px 0px;
+}
+
+.category-item {
+    background-color: transparent !important;
+    border: 1px solid rgba(0,0,0,0.1) !important;
+    border-radius: 3px !important;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.06) !important;
+    margin-bottom: 4px !important;
+    padding: 0px !important;
+    overflow: hidden !important;
+    width: 100% !important;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin-bottom: 50px;
+    background-color: #6a6a77;
+    z-index: 1030;
+}
