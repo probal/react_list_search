@@ -45,7 +45,6 @@ export default class SectionList extends Component {
         this.setState({
             favorites: tempFavs
         })
-
     }
 
     render() {
@@ -54,7 +53,7 @@ export default class SectionList extends Component {
             <div className="row">
                 
                 <div className="col-9">
-                    
+                
                     <div className="row">
                         {this.state.sections.map((section) =>
                             <Section

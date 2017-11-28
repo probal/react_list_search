@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 
 import './style.css'
+import FilterRemove from './FilterRemove'
 import categoryData from './data/categoryData'
 import CategoryFilter from './CategoryFilter'
 import SectionList from './SectionList'
@@ -38,6 +39,18 @@ export default class Assignment1 extends Component {
         });
     };
 
+    removeFilter = (filterName) => {
+        if(filterName === 'tag'){
+            this.setState({
+                filterByTag: null
+            })
+        } else if(filterName === 'category') {
+            this.setState({
+                filterByCategoryId: -1
+            })
+        }
+    };
+
     render() {
         return (
             <div className="container" style={{"padding":"50px"}}>
@@ -52,7 +65,7 @@ export default class Assignment1 extends Component {
                     categories={this.state.categories} 
                     onSelect={this.handleCategoryFilter}
                 />
-
+                <FilterRemove filterByTag={this.state.filterByTag} onRemove={this.removeFilter}/>
                 <SectionList
                     categoryId={this.state.filterByCategoryId}
                     tagId={this.state.filterByTag}
