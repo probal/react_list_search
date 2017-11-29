@@ -29,7 +29,7 @@ export default class CategoryFilter extends Component {
             return(
                 <div className="category-item flex-row grow-equally align-center" key={category.id} value={category.id} onClick={() => this.handleCategoryFilter(category.id, category.name)}>
                     <div>
-                        <img className="category-image" src={category.imageUrl} alt={category.name}/>
+                        <img className="category-image" src={category.imageUrl} title={category.name}/>
                     </div>
                     <div className="align-center">{category.name}</div>
                 </div>
