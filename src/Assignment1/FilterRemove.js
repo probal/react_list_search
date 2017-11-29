@@ -49,6 +49,6 @@ export default class FilterRemove extends Component{
 
 const styles = {
   containerStyle: {
-      margin: '15px 10px'
+      margin: '15px 25px'
   }
 };
