@@ -34,7 +34,7 @@ export default class FilterRemove extends Component{
                     <div className="d-flex flex-row" style={styles.containerStyle}>
                         <div className="inline field">
                             <div className="ui right pointing red basic label">
-                                Filter Tag:
+                                Filter :
                             </div>
                             {this.renderFilter()}
                         </div>

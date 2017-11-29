@@ -1,7 +1,7 @@
 react_list_search
 ==================
 
-A simple reactjs applicatoin to demonstrate Listing, Filtering, Component design and component reuse
+A simple reactjs application to demonstrate listing, filtering, component design and reuse
 
 How To Run
 ----------
