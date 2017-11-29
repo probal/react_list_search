@@ -82,7 +82,7 @@ class Assignment1 extends Component {
 
     render() {
         return (
-            <div className="container1" style={{"padding":"0px"}}>
+            <div className="container1" style={{"padding":"20px"}}>
 
                 <FilterRemove 
                     filterByLabel={this.state.filterByCategoryName}
