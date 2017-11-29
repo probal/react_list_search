@@ -85,10 +85,8 @@ class Assignment1 extends Component {
             <div className="container1" style={{"padding":"0px"}}>
 
                 <FilterRemove 
-                    filterByTag={this.state.filterByTag} 
-                    filterByCategory={this.state.filterByCategoryId}
-                    filterByCategoryName={this.state.filterByCategoryName}
-                    filterBy="category"
+                    filterByLabel={this.state.filterByCategoryName}
+                    filterType='category'
                     onRemove={this.removeFilter}/>
                 <CategoryFilter 
                     categories={this.state.categories} 
@@ -102,10 +100,8 @@ class Assignment1 extends Component {
                 
 
                 <FilterRemove 
-                    filterByTag={this.state.filterByTag} 
-                    filterByCategory={this.state.filterByCategoryId}
-                    filterByCategoryName={this.state.filterByCategoryName}
-                    filterBy="tag"
+                    filterByLabel={this.state.filterByTag} 
+                    filterType='tag'
                     onRemove={this.removeFilter}/>
                 <SectionList
                     articles={this.state.articles}

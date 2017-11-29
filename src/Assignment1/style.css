@@ -48,10 +48,12 @@
 }
 
 .category-container {
-    margin: 20px 0 20px 0px;
+    margin: 20px 15px;
     cursor: pointer;
 }
-
+.cursor {
+    cursor: pointer;
+}
 .category-item {
     background-color: transparent !important;
     border: 1px solid rgba(0,0,0,0.1) !important;

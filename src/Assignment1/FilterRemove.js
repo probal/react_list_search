@@ -6,66 +6,44 @@ import './style.css';
 export default class FilterRemove extends Component{
 
     static propTypes = {
-        filterByTag: PropTypes.string,
-        filterByCategory: PropTypes.number,
-        filterByCategoryName: PropTypes.string,
-        filterBy: PropTypes.string
+        filterType: PropTypes.string,
+        filterByLabel: PropTypes.string
     };
 
     constructor(props){
         super(props);
-        this.filterBy = this.props.filterBy;
-        this.renderTagFilter = this.renderTagFilter.bind(this);
-        this.renderCategoryFilter = this.renderCategoryFilter.bind(this);
+        this.filterType = this.props.filterType;
+        this.filterByLabel = this.props.filterByLabel
+        this.renderFilter = this.renderFilter.bind(this);
     }
 
-    renderTagFilter(){
+    renderFilter(){
         return(
             <div className="ui image label">
-                {this.props.filterByTag}
-                <i className="delete icon" onClick={() => this.props.onRemove('tag')}/>
+                {this.props.filterByLabel}
+                <i className="delete icon" onClick={() => this.props.onRemove(this.props.filterType)}/>
             </div>
         );
     }
 
-    renderCategoryFilter(){
-        return(
-            <div className="ui image label">
-                {this.props.filterByCategoryName}
-                <i className="delete icon" onClick={() => this.props.onRemove('category')}/>
-            </div>
-        );
-    }
+    render() {
 
-    render(){
-        if (this.filterBy === 'category'){
-            if (this.props.filterByCategory !== -1) {
-                return(
-                    <div className="d-flex flex-row" style={styles.containerStyle}>
-                        <div className="inline field">
-                            <div className="ui right pointing red basic label">
-                                Filter Category:
-                            </div>
-                            {this.renderCategoryFilter()}
-                        </div>
-                    </div>
-                );
-            }
-        }else if (this.filterBy === 'tag'){
-            if(this.props.filterByTag){
+        if (this.filterType){
+            if(this.props.filterByLabel){
                 return(
                     <div className="d-flex flex-row" style={styles.containerStyle}>
                         <div className="inline field">
                             <div className="ui right pointing red basic label">
                                 Filter Tag:
                             </div>
-                            {this.renderTagFilter()}
+                            {this.renderFilter()}
                         </div>
                     </div>
                 );
             }
-        }
-        return(<div className="flex-row"/>)
+        } 
+        return(<div className="flex-row"/>)            
+        
     }
 }
 
