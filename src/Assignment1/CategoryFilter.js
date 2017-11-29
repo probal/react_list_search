@@ -27,12 +27,12 @@ export default class CategoryFilter extends Component {
         let _categories = this.state.categories;
         return _categories.map((category) => {
             return(
-                <div className="category-item" key={category.id}>
-                    <a href="#" className="" value={category.id} onClick={() => this.handleCategoryFilter(category.id, category.name)}>
+                <div className="category-item flex-row grow-equally align-center" key={category.id} value={category.id} onClick={() => this.handleCategoryFilter(category.id, category.name)}>
+                    <div>
                         <img className="category-image" src={category.imageUrl} alt={category.name}/>
-                        <div>{category.name}</div>
-                    </a>
-                 </div>
+                    </div>
+                    <div className="align-center">{category.name}</div>
+                </div>
             );
         });
     }
@@ -40,7 +40,11 @@ export default class CategoryFilter extends Component {
     render() {
         return (
             <div>
+<<<<<<< HEAD
                 <div className="category-container">
+=======
+                <div className="category-container flex-row grow-equally">
+>>>>>>> master
                     {this.renderCategories()}
                 </div>
             </div>

@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { withRouter } from 'react-router-dom';
 
 import './style.css'
 
@@ -10,7 +11,7 @@ import FavouriteList from './FavoriteList'
 import categoryData from './data/categoryData'
 import articleData from './data/articleData'
 
-export default class Assignment1 extends Component {
+class Assignment1 extends Component {
 
     constructor(props) {
 
@@ -119,3 +120,5 @@ export default class Assignment1 extends Component {
         )
     }
 }
+
+export default withRouter(Assignment1);

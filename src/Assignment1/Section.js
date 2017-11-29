@@ -54,7 +54,7 @@ export default class Section extends Component {
             });
         
         return (
-            <div className="">
+            <div className="card-margin">
             <div className="card mb-5">
                 <h3 className="card-header">{name}</h3>
                 <div className="d-flex flex-wrap">

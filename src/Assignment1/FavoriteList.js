@@ -32,7 +32,7 @@ export default class FavouriteList extends Component{
 
         if(favorites.length > 0) {
             return(
-                <div className="d-flex wrap">
+                <div className="card-margin d-flex wrap">
                     <div className="card mb-5">
                         <h3 className="card-header">My Favourites</h3>
                         <div className="flex-row flex-wrap">
