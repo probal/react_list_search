@@ -55,6 +55,7 @@
     cursor: pointer;
 }
 .category-item {
+    justify-content: flex-start;
     background-color: transparent !important;
     border: 1px solid rgba(0,0,0,0.1) !important;
     border-radius: 3px !important;
@@ -66,13 +67,18 @@
 .fixed-top {
     position: fixed;
     top: 0;
-    right: 300;
-    left: 200;
+    right: 0;
+    left: 0;
     margin-bottom: 50px;
-    background-color: #6a6a77;
+    background-color: rgb(255, 255, 255);
     z-index: 1030;
 }
 
 .card-margin {
     margin: 5px 25px;
+}
+
+.banner-image {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
