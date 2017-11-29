@@ -40,8 +40,7 @@ export default class Article extends Component {
                 onClick={() => this.favoriteTapped(this.props.article)}/>
                 <div className="card-block">
                     <h4 className="card-title">{title}</h4>
-                    <a href = "#" className="badge badge-default" value={tag} onClick={() => this.searchByTag(tag)}>{tag}</a>
-                    {/* <p>{isFav}</p> */}
+                    <span className="badge badge-default cursor" value={tag} onClick={() => this.searchByTag(tag)}>{tag}</span>
                     <p>${price} per person</p>
                 </div>
             </div>
