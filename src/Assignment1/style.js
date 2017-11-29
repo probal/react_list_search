@@ -3,10 +3,16 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
   // Styles go here
   'container1': {
-    'marginTop': [{ 'unit': 'px', 'value': 80 }]
+    'marginTop': [{ 'unit': 'px', 'value': 100 }]
   },
   'space-around': {
     'justifyContent': 'space-around'
+  },
+  'justify-center': {
+    'justifyContent': 'center'
+  },
+  'align-center': {
+    'alignItems': 'center'
   },
   'wrap': {
     'flexWrap': 'wrap'
@@ -33,7 +39,11 @@ export default StyleSheet.create({
     'height': [{ 'unit': 'px', 'value': 72 }]
   },
   'category-container': {
-    'margin': [{ 'unit': 'px', 'value': 20 }, { 'unit': 'px', 'value': 0 }, { 'unit': 'px', 'value': 20 }, { 'unit': 'px', 'value': 0 }]
+    'margin': [{ 'unit': 'px', 'value': 20 }, { 'unit': 'px', 'value': 15 }, { 'unit': 'px', 'value': 20 }, { 'unit': 'px', 'value': 15 }],
+    'cursor': 'pointer'
+  },
+  'cursor': {
+    'cursor': 'pointer'
   },
   'category-item': {
     'justifyContent': 'flex-start',
@@ -50,10 +60,14 @@ export default StyleSheet.create({
     'right': [{ 'unit': 'px', 'value': 0 }],
     'left': [{ 'unit': 'px', 'value': 0 }],
     'marginBottom': [{ 'unit': 'px', 'value': 50 }],
-    'backgroundColor': 'rgb(221, 221, 221)',
+    'backgroundColor': 'rgb(255, 255, 255)',
     'zIndex': '1030'
   },
   'card-margin': {
-    'margin': [{ 'unit': 'px', 'value': 5 }, { 'unit': 'px', 'value': 15 }, { 'unit': 'px', 'value': 5 }, { 'unit': 'px', 'value': 15 }]
+    'margin': [{ 'unit': 'px', 'value': 5 }, { 'unit': 'px', 'value': 25 }, { 'unit': 'px', 'value': 5 }, { 'unit': 'px', 'value': 25 }]
+  },
+  'banner-image': {
+    'marginTop': [{ 'unit': 'px', 'value': 20 }],
+    'marginBottom': [{ 'unit': 'px', 'value': 20 }]
   }
 });
