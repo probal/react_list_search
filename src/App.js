@@ -9,7 +9,8 @@ class App extends Component {
         return (
             <div>
                 <div className="flex-row fixed-top justify-center">
-                    <img className="banner-image" src="http://cefalo.com/wp-content/uploads/2014/12/logo.png" alt="Cefalo School"/>
+                    {/* <img className="banner-image" src="http://cefalo.com/wp-content/uploads/2014/12/logo.png" alt="Cefalo School"/> */}
+                    <img className="banner-image" src="images/banner_image.jpg" alt="Cefalo School"/>
                 </div>
                 <div>
                 <Switch>
