@@ -40,11 +40,7 @@ export default class CategoryFilter extends Component {
     render() {
         return (
             <div>
-<<<<<<< HEAD
-                <div className="category-container">
-=======
                 <div className="category-container flex-row grow-equally">
->>>>>>> master
                     {this.renderCategories()}
                 </div>
             </div>
