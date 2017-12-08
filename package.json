@@ -2,7 +2,7 @@
   "name": "react_list_search",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://probal.github.io/react_list_search",  
+  "homepage": "https://probal.github.io/react_list_search/",  
   "dependencies": {
     "moment": "^2.19.1",
     "moment-timezone": "^0.5.14",
