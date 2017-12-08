@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { HashRouter, Switch, Route, Link } from 'react-router-dom';
 
 import Assignment1 from './Assignment1'
 import VotingApp from './VotingApp'
@@ -7,7 +7,7 @@ import VotingApp from './VotingApp'
 class App extends Component {
     render() {
         return (
-            <BrowserRouter>
+            <HashRouter>
                 <div>
                     <div className="flex-row fixed-top justify-center align-center">
                         <div>
@@ -29,7 +29,7 @@ class App extends Component {
                         </Switch>
                     </div>
                 </div>
-            </BrowserRouter>
+            </HashRouter>
         );
     }
 }
